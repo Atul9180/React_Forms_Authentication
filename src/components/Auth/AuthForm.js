@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import classes from "./AuthForm.module.css";
 
 const AuthForm = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -21,7 +21,9 @@ const AuthForm = () => {
           <label htmlFor="password">Your Password</label>
           <input type="password" id="password" required />
         </div>
+
         <div className={classes.actions}>
+          <button>{isLogin ? "Login" : "Create Account"}</button>
           <button
             type="button"
             className={classes.toggle}
